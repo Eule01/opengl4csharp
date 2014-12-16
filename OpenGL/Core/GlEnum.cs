@@ -379,7 +379,7 @@ namespace OpenGL
 
     public enum EnableCap : int
     {
-        //PointSmooth = ((int)0x0B10),
+        PointSmooth = ((int)0x0B10),
         LineSmooth = ((int)0x0B20),
         //LineStipple = ((int)0x0B24),
         PolygonSmooth = ((int)0x0B41),
