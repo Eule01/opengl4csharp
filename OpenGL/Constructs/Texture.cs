@@ -25,7 +25,7 @@ namespace OpenGL
         /// This method also supports dds textures (as long as the file extension is .dds).
         /// </summary>
         /// <param name="Filename">The path to the texture to load.</param>
-        public Texture(string Filename)
+        public Texture(string Filename, bool FlipY = true)
         {
             if (!File.Exists(Filename))
             {
@@ -37,7 +37,7 @@ namespace OpenGL
             {
                 case ".dds": LoadDDS(Filename);
                     break;
-                default: LoadBitmap((Bitmap)Bitmap.FromFile(Filename));//Filename);
+                default: LoadBitmap((Bitmap)Bitmap.FromFile(Filename),FlipY);//Filename);
                     break;
             }
 

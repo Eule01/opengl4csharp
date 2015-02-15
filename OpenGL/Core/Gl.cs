@@ -822,6 +822,27 @@ namespace OpenGL
             Delegates.glMultiDrawElementsBaseVertex(mode, count, type, indices, primcount, basevertex);
         }
 
+        /// <summary>
+        /// Added by mike:
+        /// https://www.opengl.org/wiki/GLAPI/glMultiDrawElementsIndirect
+        /// https://www.opengl.org/sdk/docs/man/html/glMultiDrawElementsIndirect.xhtml
+        /// </summary>
+        /// <param name="mode"></param>
+        /// <param name="type"></param>
+        /// <param name="indirect"></param>
+        /// <param name="drawcount"></param>
+        /// <param name="stride"></param>
+        public static void MultiDrawElementsIndirect(OpenGL.BeginMode mode, OpenGL.DrawElementsType type,
+            IntPtr indirect, Int32 drawcount, Int32 stride)
+        {
+            Delegates.glMultiDrawElementsIndirect(mode, type, indirect, drawcount, stride);
+        }
+
+
+
+
+
+
         public static void PauseTransformFeedbackNV()
         {
             Delegates.glPauseTransformFeedbackNV();

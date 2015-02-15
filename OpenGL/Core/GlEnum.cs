@@ -234,6 +234,7 @@ namespace OpenGL
         TransformFeedbackBuffer = ((int)0x8C8E),
         CopyReadBuffer = ((int)0x8F36),
         CopyWriteBuffer = ((int)0x8F37),
+        DrawIndirectBuffer = ((int)0x8F3F), // Added by mike http://docs.factorcode.org/content/word-GL_DRAW_INDIRECT_BUFFER,opengl.gl.html
     }
 
     public enum BufferUsageHint : int

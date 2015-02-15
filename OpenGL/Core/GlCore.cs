@@ -346,6 +346,21 @@ namespace OpenGL
             [System.Runtime.InteropServices.DllImport(Gl.Library, EntryPoint = "glMultiDrawElementsBaseVertex", ExactSpelling = true)]
             internal extern static void MultiDrawElementsBaseVertex(OpenGL.BeginMode mode, Int32[] count, OpenGL.DrawElementsType type, IntPtr indices, Int32 primcount, Int32[] basevertex);
 
+            /// <summary>
+            /// Added by mike:
+            /// https://www.opengl.org/wiki/GLAPI/glMultiDrawElementsIndirect
+            /// https://www.opengl.org/sdk/docs/man/html/glMultiDrawElementsIndirect.xhtml
+            /// </summary>
+            /// <param name="mode"></param>
+            /// <param name="type"></param>
+            /// <param name="indirect"></param>
+            /// <param name="drawcount"></param>
+            /// <param name="stride"></param>
+            [System.Runtime.InteropServices.DllImport(Gl.Library, EntryPoint = "glMultiDrawElementsIndirect", ExactSpelling = true)]
+            internal extern static void MultiDrawElementsIndirect(OpenGL.BeginMode mode, OpenGL.DrawElementsType type, IntPtr indirect, Int32 drawcount, Int32 stride);
+
+
+
             [System.Runtime.InteropServices.DllImport(Gl.Library, EntryPoint = "glPauseTransformFeedbackNV", ExactSpelling = true)]
             internal extern static void PauseTransformFeedbackNV();
             [System.Runtime.InteropServices.DllImport(Gl.Library, EntryPoint = "glPixelStoref", ExactSpelling = true)]

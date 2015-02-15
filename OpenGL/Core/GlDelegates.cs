@@ -334,6 +334,19 @@ namespace OpenGL
             internal static MultiDrawElements glMultiDrawElements;
             internal delegate void MultiDrawElementsBaseVertex(OpenGL.BeginMode mode, Int32[] count, OpenGL.DrawElementsType type, IntPtr indices, Int32 primcount, Int32[] basevertex);
             internal static MultiDrawElementsBaseVertex glMultiDrawElementsBaseVertex;
+
+            /// <summary>
+            /// Added by mike
+            /// </summary>
+            /// <param name="mode"></param>
+            /// <param name="type"></param>
+            /// <param name="indirect"></param>
+            /// <param name="drawcount"></param>
+            /// <param name="stride"></param>
+            internal delegate void MultiDrawElementsIndirect(OpenGL.BeginMode mode, OpenGL.DrawElementsType type, IntPtr indirect, Int32 drawcount, Int32 stride);
+            internal static MultiDrawElementsIndirect glMultiDrawElementsIndirect;
+
+
             internal delegate void PauseTransformFeedbackNV();
             internal static PauseTransformFeedbackNV glPauseTransformFeedbackNV;
             internal delegate void PixelStoref(OpenGL.PixelStoreParameter pname, Single param);
