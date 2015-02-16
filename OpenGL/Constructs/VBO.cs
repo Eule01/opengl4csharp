@@ -89,6 +89,21 @@ namespace OpenGL
             Count = Data.Length;
         }
 
+       /// <summary>
+        /// Added by mike Creates a buffer object of type T.
+        /// </summary>
+        /// <param name="Data">Specifies a pointer to data that will be copied into the data store for initialization.</param>
+        /// <param name="Target">Specifies the target buffer object.</param>
+        /// <param name="Hint">Specifies the expected usage of the data store.</param>
+        public VBO(T[] Data, VertexAttribPointerType aPointerType, BufferTarget Target = OpenGL.BufferTarget.ArrayBuffer, BufferUsageHint Hint = BufferUsageHint.StaticDraw)
+        {
+            vboID = Gl.CreateVBO<T>(BufferTarget = Target, Data, Hint);
+
+            Size = (Data is int[] ? 1 : (Data is Vector2[] ? 2 : (Data is Vector3[] ? 3 : (Data is Vector4[] ? 4 : 0))));
+            PointerType = aPointerType;
+            Count = Data.Length;
+        }
+
         /// <summary>
         /// Creates a static-read array buffer of type T.
         /// </summary>
