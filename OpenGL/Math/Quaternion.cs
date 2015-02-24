@@ -17,6 +17,8 @@ namespace OpenGL
 
         public static Quaternion Identity
         {
+            // BUG I thinks this should be 0,0,0,1
+            // This would be no rotation.
             get { return new Quaternion(1, 0, 0, 0); }
         }
         #endregion
